@@ -1,0 +1,35 @@
+.tower-tile {
+  background: url("./assets/tower.png") no-repeat center center;
+  background-size: cover;
+  height: 220px;
+  width: 260px;
+  margin: 30px 0px 0px 0px;
+}
+
+.tower-tile-enemy {
+  background: url("./assets/tower-enemy.png") no-repeat center center;
+  background-size: cover;
+  height: 220px;
+  width: 260px;
+  margin: 30px 0px 0px 0px;
+}
+
+.armor-header {
+  font-family: Quadrit;
+  font-size: 32px;
+  color: blue;
+  -webkit-text-stroke: 2px black;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-align: center;
+}
+
+.health-header {
+  font-family: Quadrit;
+  font-size: 32px;
+  color: red;
+  -webkit-text-stroke: 2px black;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-align: center;
+}

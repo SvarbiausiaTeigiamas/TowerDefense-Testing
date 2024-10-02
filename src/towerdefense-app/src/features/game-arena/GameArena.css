@@ -1,0 +1,87 @@
+.root-container {
+  background: url("../../assets/images/arena-populated.png") no-repeat center center fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 1024px;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+}
+
+.tower-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 40px 60px 40px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 1800px;
+  margin-top: 20px;
+  column-gap: 1070px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 1024px;
+  margin-top: 20px;
+  /* kol sita chaltura issiaiskinau...*/
+  flex: 0 1 auto;
+  position: absolute;
+  /* new */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.commands {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.command {
+  font-family: Quadrit;
+  color: white;
+  -webkit-text-stroke: 1.5px black;
+  text-decoration: none;
+  font-size: large;
+  background-color: transparent;
+  border: 2px solid white;
+  outline: 2px solid black;
+  outline-offset: 0px;
+  width: 200px;
+}
+.command:hover {
+  background-color: rgba(128, 128, 128, 0.462);
+}
+
+
+
+.name-header {
+  font-family: Quadrit;
+  font-size: 3em;
+  color: white;
+  -webkit-text-stroke: 2px black;
+  text-decoration: none;
+  margin: 0px 0px 20px 0px;
+}
