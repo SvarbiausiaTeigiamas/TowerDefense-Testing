@@ -1,4 +1,4 @@
-﻿namespace TowerDefense.Api.Constants
+namespace TowerDefense.Api.Constants
 {
     public static class TowerDefense
     {

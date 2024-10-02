@@ -1,4 +1,4 @@
-﻿namespace TowerDefense.Api.GameLogic.Grid
+namespace TowerDefense.Api.GameLogic.Grid
 {
     public class FirstLevelArenaGrid : IArenaGrid
     {

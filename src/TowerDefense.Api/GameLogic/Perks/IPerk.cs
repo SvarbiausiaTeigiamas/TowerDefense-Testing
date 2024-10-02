@@ -1,4 +1,4 @@
-﻿namespace TowerDefense.Api.GameLogic.Perks
+namespace TowerDefense.Api.GameLogic.Perks
 {
     public interface IPerk
     {

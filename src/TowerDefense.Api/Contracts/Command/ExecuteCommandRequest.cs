@@ -1,4 +1,4 @@
-﻿namespace TowerDefense.Api.Contracts.Command
+namespace TowerDefense.Api.Contracts.Command
 {
     public class ExecuteCommandRequest
     {

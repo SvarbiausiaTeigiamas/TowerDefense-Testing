@@ -1,4 +1,4 @@
-﻿using TowerDefense.Api.GameLogic.GameState;
+using TowerDefense.Api.GameLogic.GameState;
 using TowerDefense.Api.GameLogic.Player;
 using TowerDefense.Api.Hubs;
 

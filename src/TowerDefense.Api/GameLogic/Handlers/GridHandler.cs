@@ -1,4 +1,4 @@
-﻿using TowerDefense.Api.GameLogic.GameState;
+using TowerDefense.Api.GameLogic.GameState;
 using TowerDefense.Api.GameLogic.Grid;
 
 namespace TowerDefense.Api.GameLogic.Handlers

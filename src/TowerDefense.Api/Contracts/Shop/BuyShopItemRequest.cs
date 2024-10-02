@@ -1,4 +1,4 @@
-﻿namespace TowerDefense.Api.Contracts.Shop
+namespace TowerDefense.Api.Contracts.Shop
 {
     public class BuyShopItemRequest
     {

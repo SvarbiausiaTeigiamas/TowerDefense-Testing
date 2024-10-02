@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.SignalR;
+using Microsoft.AspNetCore.SignalR;
 using TowerDefense.Api.GameLogic.Handlers;
 
 namespace TowerDefense.Api.Hubs

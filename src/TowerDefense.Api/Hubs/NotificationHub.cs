@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.SignalR;
+using Microsoft.AspNetCore.SignalR;
 using TowerDefense.Api.Contracts.Turn;
 using TowerDefense.Api.GameLogic.Handlers;
 using TowerDefense.Api.GameLogic.Player;

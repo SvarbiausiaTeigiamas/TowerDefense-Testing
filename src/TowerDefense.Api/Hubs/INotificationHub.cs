@@ -1,4 +1,4 @@
-﻿using TowerDefense.Api.Contracts.Turn;
+using TowerDefense.Api.Contracts.Turn;
 using TowerDefense.Api.GameLogic.Player;
 
 namespace TowerDefense.Api.Hubs

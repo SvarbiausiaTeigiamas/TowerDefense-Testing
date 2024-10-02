@@ -1,4 +1,4 @@
-﻿namespace TowerDefense.Api.GameLogic.GameState
+namespace TowerDefense.Api.GameLogic.GameState
 {
     public static class GameOriginator
     {

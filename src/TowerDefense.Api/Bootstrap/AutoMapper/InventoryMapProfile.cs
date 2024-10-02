@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using TowerDefense.Api.Contracts.Inventory;
 using TowerDefense.Api.GameLogic.Player;
 

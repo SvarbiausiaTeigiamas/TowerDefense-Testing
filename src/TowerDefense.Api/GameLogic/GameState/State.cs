@@ -1,4 +1,4 @@
-﻿using TowerDefense.Api.GameLogic.Perks;
+using TowerDefense.Api.GameLogic.Perks;
 using TowerDefense.Api.GameLogic.Player;
 
 namespace TowerDefense.Api.GameLogic.GameState

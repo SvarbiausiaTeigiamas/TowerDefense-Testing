@@ -1,4 +1,4 @@
-﻿namespace TowerDefense.Api.GameLogic.Items;
+namespace TowerDefense.Api.GameLogic.Items;
 
 public class DefaultZeroItemStats : IItemStats
 {

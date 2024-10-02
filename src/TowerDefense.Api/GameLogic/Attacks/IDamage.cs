@@ -1,4 +1,4 @@
-﻿namespace TowerDefense.Api.GameLogic.Attacks
+namespace TowerDefense.Api.GameLogic.Attacks
 {
     public interface IDamage
     {

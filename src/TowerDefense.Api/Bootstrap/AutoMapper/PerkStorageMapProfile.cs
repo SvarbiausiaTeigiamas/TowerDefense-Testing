@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using TowerDefense.Api.Contracts.Perks;
 using TowerDefense.Api.GameLogic.PerkStorage;
 

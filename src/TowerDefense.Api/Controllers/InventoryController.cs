@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using TowerDefense.Api.GameLogic.Handlers;
 using TowerDefense.Api.Contracts.Inventory;

@@ -1,4 +1,4 @@
-﻿namespace TowerDefense.Api.Contracts.Perks
+namespace TowerDefense.Api.Contracts.Perks
 {
     public class ApplyPerkRequest
     {

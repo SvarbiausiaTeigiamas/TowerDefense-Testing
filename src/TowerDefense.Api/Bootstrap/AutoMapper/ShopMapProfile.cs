@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using TowerDefense.Api.GameLogic.Shop;
 using TowerDefense.Api.Contracts.Shop;
 

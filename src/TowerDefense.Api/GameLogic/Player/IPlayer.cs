@@ -1,4 +1,4 @@
-﻿using TowerDefense.Api.GameLogic.Grid;
+using TowerDefense.Api.GameLogic.Grid;
 using TowerDefense.Api.GameLogic.PerkStorage;
 using TowerDefense.Api.GameLogic.Shop;
 

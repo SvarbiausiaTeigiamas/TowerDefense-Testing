@@ -1,4 +1,4 @@
-﻿namespace TowerDefense.Api.Contracts.Turn
+namespace TowerDefense.Api.Contracts.Turn
 {
     public class EndTurnRequest
     {

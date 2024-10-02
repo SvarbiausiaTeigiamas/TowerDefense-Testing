@@ -1,4 +1,4 @@
-﻿using TowerDefense.Api.GameLogic.Attacks;
+using TowerDefense.Api.GameLogic.Attacks;
 using TowerDefense.Api.GameLogic.Items;
 using TowerDefense.Api.GameLogic.Items.Models;
 

@@ -1,4 +1,4 @@
-﻿using TowerDefense.Api.GameLogic.GameState;
+using TowerDefense.Api.GameLogic.GameState;
 using TowerDefense.Api.GameLogic.Perks;
 using TowerDefense.Api.GameLogic.PerkStorage;
 

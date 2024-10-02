@@ -1,4 +1,4 @@
-﻿namespace TowerDefense.Api.Contracts.Player
+namespace TowerDefense.Api.Contracts.Player
 {
     public class GetPlayerInfoResponse
     {
