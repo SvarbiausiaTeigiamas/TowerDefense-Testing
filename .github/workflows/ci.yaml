@@ -28,7 +28,7 @@ jobs:
       
     - name: Test
       working-directory: src/TowerDefense.Tests
-      run: dotnet test UnitTests --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal
 
     # Optional: Add test coverage reporting
     # - name: Generate coverage report
