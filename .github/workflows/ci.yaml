@@ -1,0 +1,42 @@
+name: .NET Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest 
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '6.0.427'
+        
+    - name: Restore dependencies
+      working-directory: src/TowerDefense.Tests
+      run: dotnet restore
+      
+    - name: Build
+      working-directory: src/TowerDefense.Tests
+      run: dotnet build --no-restore
+      
+    - name: Test
+      working-directory: src/TowerDefense.Tests
+      run: dotnet test --no-build --verbosity normal
+
+    # Optional: Add test coverage reporting
+    # - name: Generate coverage report
+    #   run: dotnet test src/Tests /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
+
+    # Optional: Upload coverage report
+    # - name: Upload coverage report
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: coverage-report
+    #     path: src/Tests/coverage.cobertura.xml
