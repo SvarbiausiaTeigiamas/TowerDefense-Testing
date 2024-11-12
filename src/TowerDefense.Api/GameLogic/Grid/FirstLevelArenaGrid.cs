@@ -18,5 +18,12 @@ namespace TowerDefense.Api.GameLogic.Grid
 
             GridItems.CreateGrid(gridLayout);
         }
+
+        // constructor for tests
+        public FirstLevelArenaGrid(string layout, int maxNumberOfTiles = 9)
+        {
+            GridItems = new GridItem[maxNumberOfTiles];
+            GridItems.CreateGrid(layout);
+        }
     }
 }
