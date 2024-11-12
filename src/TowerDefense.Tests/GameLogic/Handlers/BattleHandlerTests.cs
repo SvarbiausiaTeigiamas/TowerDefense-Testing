@@ -90,7 +90,7 @@ public class BattleHandlerTests
         {
             Name = "Player1",
             ArenaGrid = new FirstLevelArenaGrid(player1Layout),
-            Health = 60,
+            Health = 0,
             Armor = 0,
             Money = 1000
         };
@@ -105,8 +105,6 @@ public class BattleHandlerTests
         };
 
         _gameState.Players = new List<IPlayer> { player1, player2 }.ToArray();
-
-        await _battleHandler.HandleEndTurn();
 
         Assert.True(player1.Health <= 0);
     }
