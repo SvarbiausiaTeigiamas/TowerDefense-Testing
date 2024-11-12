@@ -10,7 +10,7 @@ namespace TowerDefense.Api.GameLogic.Handlers
         Task FinishGame(IPlayer winnerPlayer);
     }
 
-    class GameHandler : IGameHandler
+    public class GameHandler : IGameHandler
     {
         private readonly INotificationHub _notificationHub;
 
