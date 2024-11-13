@@ -1,4 +1,4 @@
-﻿using Moq;
+using Moq;
 using TowerDefense.Api.Contracts.Turn;
 using TowerDefense.Api.GameLogic.Attacks;
 using TowerDefense.Api.GameLogic.GameState;
