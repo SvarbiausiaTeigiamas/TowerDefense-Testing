@@ -19,12 +19,12 @@ public class GameHandlerTests : IDisposable
 
         _gameHandler = new GameHandler(_notificationHubMock.Object);
 
-        GameOriginator.GameState = null;
+        GameOriginator.GameState = new State();
     }
 
     public void Dispose()
     {
-        GameOriginator.GameState = null;
+        GameOriginator.GameState = new State();
     }
 
     [Fact]
