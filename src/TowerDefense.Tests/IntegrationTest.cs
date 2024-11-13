@@ -1,15 +1,14 @@
 using System.Net;
 using FluentAssertions;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.AspNetCore.SignalR.Client;
-using Microsoft.Extensions.DependencyInjection;
 using TowerDefense.Api.Bootstrap;
 using TowerDefense.Api.Bootstrap.AutoMapper;
 using TowerDefense.Api.Constants;
 using TowerDefense.Api.Contracts.Player;
-using TowerDefense.Api.Hubs;
+using TowerDefense.Api.Contracts.Shop;
 using Xunit.Abstractions;
+using TowerDefense.Api.GameLogic.Items;
+using TowerDefense.Api.GameLogic.Items.Models;
 
 namespace UnitTests;
 
@@ -32,13 +31,13 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
             {
                 options.AddPolicy(
                     Policy.DevelopmentCors,
-                    builder =>
+                    b=>
                     {
-                        builder
+                       b 
                             .WithOrigins("https://localhost:3000")
                             .AllowAnyHeader()
                             .AllowAnyMethod()
-                            .SetIsOriginAllowed((x) => true)
+                            .SetIsOriginAllowed((_) => true)
                             .AllowCredentials();
                     }
                 );
@@ -49,16 +48,14 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
 
 public class GameIntegrationTests : IClassFixture<CustomWebApplicationFactory>
 {
-    private readonly CustomWebApplicationFactory _factory;
     private readonly ITestOutputHelper _output;
     private readonly HttpClient _client;
 
     public GameIntegrationTests(CustomWebApplicationFactory factory, ITestOutputHelper output)
     {
-        _factory = factory;
         _output = output;
         
-        _client = _factory.CreateClient(
+        _client = factory.CreateClient(
             new WebApplicationFactoryClientOptions
             {
                 BaseAddress = new Uri("https://localhost:7042"),
@@ -106,9 +103,36 @@ public class GameIntegrationTests : IClassFixture<CustomWebApplicationFactory>
             .BeEquivalentTo(await player2Info.Content.ReadFromJsonAsync<GetPlayerInfoResponse>());
     }
 
-    [Fact]
     public async Task Buy_Items_Test()
     {
+        var player1BuyItemResponse = await _client.PostAsJsonAsync(
+            "/api/shop",
+            new BuyShopItemRequest{ ItemId = "0" ,PlayerName = "PlayerOne" }
+        );
+        var player2BuyItemResponse = await _client.PostAsJsonAsync(
+            "/api/shop",
+            new BuyShopItemRequest{ ItemId = "1", PlayerName = "PlayerTwo" }
+        );
         
+        _output.WriteLine(await player1BuyItemResponse.Content.ReadAsStringAsync());
+        
+        Assert.Equal(HttpStatusCode.OK, player1BuyItemResponse.StatusCode);
+        Assert.Equal(HttpStatusCode.OK, player2BuyItemResponse.StatusCode);
+        
+        var player1Items = await _client.GetAsync("/api/shop/PlayerOne");
+        new GetShopItemsResponse() 
+        {
+            Items = new List<IItem>{new Rockets()}
+        }
+            .Should()
+            .BeEquivalentTo(await player1Items.Content.ReadFromJsonAsync<GetShopItemsResponse>());
+        
+        var player2Info = await _client.GetAsync("/api/players/PlayerTwo");
+        new GetShopItemsResponse() 
+        {
+            Items = new List<IItem>{new Shield()}
+        }
+            .Should()
+            .BeEquivalentTo(await player2Info.Content.ReadFromJsonAsync<GetShopItemsResponse>());
     }
 }
