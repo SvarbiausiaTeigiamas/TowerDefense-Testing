@@ -18,9 +18,10 @@ namespace TowerDefense.Api.GameLogic.Handlers
         private readonly INotificationHub _notificationHub;
         private readonly IGameHandler _gameHandler;
 
-        public BattleHandler(IAttackHandler attackHandler, IGameHandler gameHandler, INotificationHub notificationHub)
+        public BattleHandler(IAttackHandler attackHandler, IGameHandler gameHandler, INotificationHub notificationHub, State state = null)
         {
-            _gameState = GameOriginator.GameState;
+            if (state == null) _gameState = GameOriginator.GameState;
+            else _gameState = state;
             _attackHandler = attackHandler;
             _gameHandler = gameHandler;
             _notificationHub = notificationHub;

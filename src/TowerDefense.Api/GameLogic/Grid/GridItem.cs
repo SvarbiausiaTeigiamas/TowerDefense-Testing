@@ -6,12 +6,12 @@ namespace TowerDefense.Api.GameLogic.Grid
 {
     public class GridItem
     {
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
         public IItem Item { get; set; }
 
         public ItemType ItemType => Item.ItemType;
 
-        public AttackResult HandleAttack(AttackDeclaration attackDeclaration)
+        public virtual AttackResult HandleAttack(AttackDeclaration attackDeclaration)
         {
             if (Item.Stats is not DefaultZeroItemStats)
             {

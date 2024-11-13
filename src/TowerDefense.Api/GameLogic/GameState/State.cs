@@ -10,4 +10,6 @@ namespace TowerDefense.Api.GameLogic.GameState
         public int ActivePlayers => Players.Count(player => player != null);
         public List<(string PlayerName, IPerk Perk)> PerksUsedOnPlayer { get; set; } = new();
     }
+
+	
 }
