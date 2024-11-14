@@ -49,12 +49,12 @@ namespace UnitTests.GameLogic.Handlers
         [Fact]
         public void HandlePlayerAttacks_WithItemsHavingNoAttacks_ReturnsDirectAttacks()
         {
-            string layout1 = 
+            string layout1 =
                 @"303
                 333
                 333";
 
-            string layout2 = 
+            string layout2 =
                 @"333
                   333
                   333";
@@ -93,7 +93,8 @@ namespace UnitTests.GameLogic.Handlers
         [Fact]
         public void HandlePlayerAttacks_WithMixedItems_ReturnsCorrectAttacks()
         {
-            const string gridLayout1 = @"33003333
+            const string gridLayout1 =
+                @"33003333
                                         33330333
                                         33331333
                                         33333333
@@ -103,7 +104,8 @@ namespace UnitTests.GameLogic.Handlers
                                         33333333
                                         33330333";
 
-            const string gridLayout2 = @"33333333
+            const string gridLayout2 =
+                @"33333333
                                         33330333
                                         33331333
                                         33333333

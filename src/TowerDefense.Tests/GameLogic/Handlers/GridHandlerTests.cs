@@ -17,13 +17,10 @@ public class GridHandlerTests : IDisposable
         var firstLevelPlayer = new FirstLevelPlayer
         {
             Name = "Player1",
-            ArenaGrid = mockArenaGrid.Object
+            ArenaGrid = mockArenaGrid.Object,
         };
 
-        State _gameState = new State
-        {
-            Players = new IPlayer[] { firstLevelPlayer },
-        };
+        State _gameState = new State { Players = new IPlayer[] { firstLevelPlayer } };
 
         GameOriginator.GameState = _gameState;
 
@@ -44,13 +41,10 @@ public class GridHandlerTests : IDisposable
         var firstLevelPlayer = new FirstLevelPlayer
         {
             Name = "Player1",
-            ArenaGrid = mockArenaGrid.Object
+            ArenaGrid = mockArenaGrid.Object,
         };
 
-        State _gameState = new State
-        {
-            Players = new IPlayer[] { firstLevelPlayer },
-        };
+        State _gameState = new State { Players = new IPlayer[] { firstLevelPlayer } };
 
         GameOriginator.GameState = _gameState;
 

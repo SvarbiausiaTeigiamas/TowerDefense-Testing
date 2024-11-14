@@ -1,10 +1,10 @@
-﻿using Xunit;
+﻿using System.Linq;
 using TowerDefense.Api.GameLogic.GameState;
 using TowerDefense.Api.GameLogic.Handlers;
 using TowerDefense.Api.GameLogic.Items;
 using TowerDefense.Api.GameLogic.Items.Models;
 using TowerDefense.Api.GameLogic.Player;
-using System.Linq;
+using Xunit;
 
 namespace UnitTests.GameLogic.Handlers;
 
@@ -24,12 +24,12 @@ public class InventoryHandlerTests : IDisposable
         _gameState.Players[0] = new FirstLevelPlayer
         {
             Name = "PlayerOne",
-            Inventory = new Inventory { Items = new List<IItem> { new Rockets() } }
+            Inventory = new Inventory { Items = new List<IItem> { new Rockets() } },
         };
         _gameState.Players[1] = new FirstLevelPlayer
         {
             Name = "PlayerTwo",
-            Inventory = new Inventory { Items = new List<IItem> { new Shield() } }
+            Inventory = new Inventory { Items = new List<IItem> { new Shield() } },
         };
     }
 

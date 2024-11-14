@@ -14,16 +14,9 @@ public class ShopHandlerTests : IDisposable
         var shop = new FirstLevelShop();
 
         // Arrange
-        var player = new FirstLevelPlayer
-        {
-            Name = "Player1",
-            Shop = shop
-        };
+        var player = new FirstLevelPlayer { Name = "Player1", Shop = shop };
 
-        var gameState = new State
-        {
-            Players = new IPlayer[] { player },
-        };
+        var gameState = new State { Players = new IPlayer[] { player } };
 
         GameOriginator.GameState = gameState;
 
@@ -42,16 +35,9 @@ public class ShopHandlerTests : IDisposable
         var shop = new FirstLevelShop();
 
         // Arrange
-        var player = new FirstLevelPlayer
-        {
-            Name = "Player1",
-            Shop = shop
-        };
+        var player = new FirstLevelPlayer { Name = "Player1", Shop = shop };
 
-        var gameState = new State
-        {
-            Players = new IPlayer[] { player },
-        };
+        var gameState = new State { Players = new IPlayer[] { player } };
 
         GameOriginator.GameState = gameState;
 
@@ -74,13 +60,10 @@ public class ShopHandlerTests : IDisposable
         {
             Name = "Player1",
             Money = 0,
-            Shop = shop
+            Shop = shop,
         };
 
-        var gameState = new State
-        {
-            Players = new IPlayer[] { player },
-        };
+        var gameState = new State { Players = new IPlayer[] { player } };
 
         GameOriginator.GameState = gameState;
 
@@ -103,13 +86,10 @@ public class ShopHandlerTests : IDisposable
         {
             Name = "Player1",
             Money = 1000,
-            Shop = shop
+            Shop = shop,
         };
 
-        var gameState = new State
-        {
-            Players = new IPlayer[] { player },
-        };
+        var gameState = new State { Players = new IPlayer[] { player } };
 
         GameOriginator.GameState = gameState;
 

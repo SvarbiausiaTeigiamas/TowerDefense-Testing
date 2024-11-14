@@ -1,9 +1,9 @@
-﻿using Xunit;
+﻿using System.Collections.Generic;
+using System.Linq;
 using TowerDefense.Api.GameLogic.GameState;
 using TowerDefense.Api.GameLogic.Handlers;
 using TowerDefense.Api.GameLogic.Player;
-using System.Collections.Generic;
-using System.Linq;
+using Xunit;
 
 namespace UnitTests.GameLogic.Handlers;
 

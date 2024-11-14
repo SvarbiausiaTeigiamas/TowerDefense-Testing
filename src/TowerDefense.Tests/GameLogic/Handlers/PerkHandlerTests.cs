@@ -28,10 +28,7 @@ public class PerkHandlerTests : IDisposable
             PerkStorage = new FirstLevelPerkStorage(),
         };
 
-        _gameState = new State
-        {
-            Players = new IPlayer[] { _firstPlayer, _secondPlayer },
-        };
+        _gameState = new State { Players = new IPlayer[] { _firstPlayer, _secondPlayer } };
     }
 
     [Fact]
@@ -47,10 +44,7 @@ public class PerkHandlerTests : IDisposable
             PerkStorage = FirstLevelPerkStorage,
         };
 
-        State gameState = new State
-        {
-            Players = new IPlayer[] { firstLevelPlayer },
-        };
+        State gameState = new State { Players = new IPlayer[] { firstLevelPlayer } };
 
         GameOriginator.GameState = gameState;
 
@@ -82,10 +76,7 @@ public class PerkHandlerTests : IDisposable
             PerkStorage = new FirstLevelPerkStorage(),
         };
 
-        State gameState = new State
-        {
-            Players = new IPlayer[] { player, enemyPlayer },
-        };
+        State gameState = new State { Players = new IPlayer[] { player, enemyPlayer } };
 
         GameOriginator.GameState = gameState;
 
@@ -118,10 +109,7 @@ public class PerkHandlerTests : IDisposable
             PerkStorage = new FirstLevelPerkStorage(),
         };
 
-        State gameState = new State
-        {
-            Players = new IPlayer[] { player, enemyPlayer },
-        };
+        State gameState = new State { Players = new IPlayer[] { player, enemyPlayer } };
 
         GameOriginator.GameState = gameState;
 
