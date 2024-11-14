@@ -18,6 +18,9 @@ jobs:
       with:
         dotnet-version: '6.0.427'
         
+    - name: Install coverlet
+      run: dotnet tool install --global coverlet.console
+        
     - name: Restore dependencies
       working-directory: src/TowerDefense.Tests
       run: dotnet restore
@@ -26,17 +29,10 @@ jobs:
       working-directory: src/TowerDefense.Tests
       run: dotnet build --no-restore
       
-    - name: Test
+    - name: Test with coverage
       working-directory: src/TowerDefense.Tests
-      run: dotnet test --no-build --verbosity normal
-
-    # Optional: Add test coverage reporting
-    # - name: Generate coverage report
-    #   run: dotnet test src/Tests /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
-
-    # Optional: Upload coverage report
-    # - name: Upload coverage report
-    #   uses: actions/upload-artifact@v3
-    #   with:
-    #     name: coverage-report
-    #     path: src/Tests/coverage.cobertura.xml
+      run: |
+        coverlet ./bin/Debug/net6.0/TowerDefense.Tests.dll \
+          --target "dotnet" \
+          --targetargs "test --no-build" \
+          --include "[TowerDefense*]GameLogic.Handlers.*"
