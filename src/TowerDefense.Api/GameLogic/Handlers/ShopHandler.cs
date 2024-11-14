@@ -29,7 +29,7 @@ namespace TowerDefense.Api.GameLogic.Handlers
         public bool TryBuyItem(string playerName, string identifier)
         {
             var player = _gameState.Players.First(player => player.Name == playerName);
-            var item = player.Shop.Items.First(item => item.Id == identifier);
+            var item = player.Shop.Items.FirstOrDefault(item => item.Id == identifier);
 
             if (item == null) return false;
 
