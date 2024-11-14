@@ -30,6 +30,24 @@ public class ShopHandlerTests : IDisposable
     }
 
     [Fact]
+    public void GetPlayerShop_ThrowsException_WhenPlayerIsNotFound()
+    {
+        var shop = new FirstLevelShop();
+
+        // Arrange
+        var player = new FirstLevelPlayer { Name = "Player1", Shop = shop };
+
+        var gameState = new State { Players = new IPlayer[] { player } };
+
+        GameOriginator.GameState = gameState;
+
+        var shopHandler = new ShopHandler();
+
+        // Assert & Act
+        Assert.Throws<InvalidOperationException>(() => shopHandler.GetPlayerShop("playerName"));
+    }
+
+    [Fact]
     public void TryBuyItem_ShouldReturnFalse_WhenItemNotFound()
     {
         var shop = new FirstLevelShop();
