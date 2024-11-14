@@ -7,6 +7,7 @@ using TowerDefense.Api.GameLogic.Handlers;
 
 namespace UnitTests.GameLogic.Handlers
 {
+	[Collection("Handlers")]
 	public class InitialGameSetupHandlerTests
 	{
 		private readonly Mock<INotificationHub> _notificationHubMock;

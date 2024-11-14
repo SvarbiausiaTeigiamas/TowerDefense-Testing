@@ -9,6 +9,7 @@ using TowerDefense.Api.Hubs;
 
 namespace UnitTests.GameLogic.Handlers;
 
+[Collection("Handlers")]
 public class BattleHandlerTests : IDisposable
 {
 	private readonly Mock<IAttackHandler> _mockAttackHandler;

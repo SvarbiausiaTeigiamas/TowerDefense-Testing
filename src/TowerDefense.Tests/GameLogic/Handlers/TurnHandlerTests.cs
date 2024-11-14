@@ -4,6 +4,7 @@ using TowerDefense.Api.GameLogic.Handlers;
 
 namespace UnitTests.GameLogic.Handlers
 {
+    [Collection("Handlers")]
     public class TurnHandlerTests
     {
         private readonly Mock<IBattleHandler> _battleHandlerMock;

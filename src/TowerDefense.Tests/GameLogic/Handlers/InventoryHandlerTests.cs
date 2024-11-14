@@ -8,6 +8,7 @@ using System.Linq;
 
 namespace UnitTests.GameLogic.Handlers;
 
+[Collection("Handlers")]
 public class InventoryHandlerTests : IDisposable
 {
     private readonly InventoryHandler _sut;

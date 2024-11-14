@@ -7,6 +7,7 @@ using System.Linq;
 
 namespace UnitTests.GameLogic.Handlers;
 
+[Collection("Handlers")]
 public class PlayerHandlerTests : IDisposable
 {
     private readonly PlayerHandler _sut;
