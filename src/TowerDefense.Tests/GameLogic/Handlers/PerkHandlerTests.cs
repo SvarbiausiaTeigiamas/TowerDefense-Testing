@@ -58,6 +58,29 @@ public class PerkHandlerTests : IDisposable
     }
 
     [Fact]
+    public void GetPerks_ThrowsException_WhenPlayerDoesntExist()
+    {
+        // Arrange
+        var playerName = "Player1";
+        var FirstLevelPerkStorage = new FirstLevelPerkStorage();
+
+        var firstLevelPlayer = new FirstLevelPlayer
+        {
+            Name = playerName,
+            PerkStorage = FirstLevelPerkStorage,
+        };
+
+        State gameState = new State { Players = new IPlayer[] { firstLevelPlayer } };
+
+        GameOriginator.GameState = gameState;
+
+        var perkHandler = new PerkHandler();
+
+        // Assert & Act
+        Assert.Throws<InvalidOperationException>(() => perkHandler.GetPerks("playerName"));
+    }
+
+    [Fact]
     public void UsePerk_ShouldHalveEnemyMoney_WhenPerkTypeIsCutInHalf()
     {
         // Arrange
