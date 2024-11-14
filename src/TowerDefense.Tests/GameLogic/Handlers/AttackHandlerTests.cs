@@ -1,10 +1,8 @@
 ﻿using Moq;
 using TowerDefense.Api.GameLogic.Grid;
-using TowerDefense.Api.GameLogic.Items.Models;
-using TowerDefense.Api.GameLogic.Attacks;
-using TowerDefense.Api.GameLogic.Items;
+using TowerDefense.Api.GameLogic.Handlers;
 
-namespace TowerDefense.Api.GameLogic.Handlers.Tests
+namespace UnitTests.GameLogic.Handlers
 {
     public class AttackHandlerTests
     {
