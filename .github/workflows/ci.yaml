@@ -26,6 +26,11 @@ jobs:
       working-directory: src/TowerDefense.Tests
       run: dotnet build --no-restore
       
-    - name: Test with coverage
+    - name: Run unit tests with coverage
       working-directory: src/TowerDefense.Tests
-      run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=lcov
+      run: dotnet test --filter "FullyQualifiedName~Handlers" /p:CollectCoverage=true /p:CoverletOutputFormat=lcov
+
+    - name: All tests
+      working-directory: src/TowerDefense.Tests
+      run: dotnet test
+
