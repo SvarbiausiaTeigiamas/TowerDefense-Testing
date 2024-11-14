@@ -28,4 +28,4 @@ jobs:
       
     - name: Test with coverage
       working-directory: src/TowerDefense.Tests
-      run: dotnet dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=lcov
+      run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=lcov
