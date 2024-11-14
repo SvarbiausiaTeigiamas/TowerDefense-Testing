@@ -26,17 +26,11 @@ jobs:
       working-directory: src/TowerDefense.Tests
       run: dotnet build --no-restore
       
-    - name: Test
+    - name: Unit tests with coverage
       working-directory: src/TowerDefense.Tests
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --filter "FullyQualifiedName~Handlers" /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:Include="[TowerDefense.Api]TowerDefense.Api.GameLogic.Handlers.*"
 
-    # Optional: Add test coverage reporting
-    # - name: Generate coverage report
-    #   run: dotnet test src/Tests /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
+    - name: Integration test
+      working-directory: src/TowerDefense.Tests
+      run: dotnet test --filter "FullyQualifiedName~IntegrationTest"
 
-    # Optional: Upload coverage report
-    # - name: Upload coverage report
-    #   uses: actions/upload-artifact@v3
-    #   with:
-    #     name: coverage-report
-    #     path: src/Tests/coverage.cobertura.xml
