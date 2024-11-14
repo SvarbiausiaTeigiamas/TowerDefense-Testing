@@ -22,10 +22,8 @@ namespace UnitTests.GameLogic.Handlers
 		[Fact]
 		public void AddNewPlayer_ShouldCreatePlayerWithAllComponents()
 		{
-			// Act
 			var player = _handler.AddNewPlayer("TestPlayer");
 
-			// Assert
 			Assert.NotNull(player);
 			Assert.Equal("TestPlayer", player.Name);
 			Assert.NotNull(player.ArenaGrid);
@@ -36,37 +34,29 @@ namespace UnitTests.GameLogic.Handlers
 		[Fact]
 		public void SetConnectionIdForPlayer_ShouldUpdatePlayerConnectionId()
 		{
-			// Arrange
 			var player = _handler.AddNewPlayer("TestPlayer");
 
-			// Act
 			_handler.SetConnectionIdForPlayer("TestPlayer", "connection123");
 
-			// Assert
 			Assert.Equal("connection123", player.ConnectionId);
 		}
 
 		[Fact]
 		public void AddPlayerToGame_WhenMaxPlayersReached_ShouldThrowArgumentException()
 		{
-			// Arrange
 			_handler.AddNewPlayer("Player1");
 			_handler.AddNewPlayer("Player2");
 
-			// Act & Assert
 			Assert.Throws<ArgumentException>(() => _handler.AddPlayerToGame("Player3"));
 		}
 
 		[Fact]
 		public async Task TryStartGame_WhenNotEnoughPlayers_ShouldNotNotifyGameStart()
 		{
-			// Arrange
 			_handler.AddNewPlayer("Player1");
 
-			// Act
 			await _handler.TryStartGame();
 
-			// Assert
 			_notificationHubMock.Verify(
 				x => x.NotifyGameStart(It.IsAny<IPlayer>(), It.IsAny<IPlayer>()),
 				Times.Never);
@@ -75,14 +65,11 @@ namespace UnitTests.GameLogic.Handlers
 		[Fact]
 		public async Task TryStartGame_WhenEnoughPlayers_ShouldNotifyGameStart()
 		{
-			// Arrange
 			var player1 = _handler.AddNewPlayer("Player1");
 			var player2 = _handler.AddNewPlayer("Player2");
 
-			// Act
 			await _handler.TryStartGame();
 
-			// Assert
 			_notificationHubMock.Verify(
 				x => x.NotifyGameStart(player1, player2),
 				Times.Once);
