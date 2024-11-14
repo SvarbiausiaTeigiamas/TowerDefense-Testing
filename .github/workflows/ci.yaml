@@ -18,9 +18,6 @@ jobs:
       with:
         dotnet-version: '6.0.427'
         
-    - name: Install coverlet
-      run: dotnet tool install --global coverlet.console
-        
     - name: Restore dependencies
       working-directory: src/TowerDefense.Tests
       run: dotnet restore
@@ -31,9 +28,4 @@ jobs:
       
     - name: Test with coverage
       working-directory: src/TowerDefense.Tests
-      run: |
-        coverlet ./bin/Debug/net6.0/TowerDefense.Tests.dll \
-          --target "dotnet" \
-          --targetargs "test --no-build" \
-          --include "*/GameLogic/Handlers/*" \
-          --exclude "[TowerDefense.Tests]*"
+      run: dotnet test --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=console /p:Threshold=80
