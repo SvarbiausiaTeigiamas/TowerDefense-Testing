@@ -35,4 +35,4 @@ jobs:
         coverlet ./bin/Debug/net6.0/TowerDefense.Tests.dll \
           --target "dotnet" \
           --targetargs "test --no-build" \
-          --include "[TowerDefense*]GameLogic.Handlers.*"
+          --include "[TowerDefense.Api]GameLogic.Handlers.*"
