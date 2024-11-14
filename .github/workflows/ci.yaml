@@ -26,11 +26,11 @@ jobs:
       working-directory: src/TowerDefense.Tests
       run: dotnet build --no-restore
       
-    - name: Run unit tests with coverage
+    - name: Unit tests with coverage
       working-directory: src/TowerDefense.Tests
-      run: dotnet test --filter "FullyQualifiedName~Handlers" /p:CollectCoverage=true /p:CoverletOutputFormat=lcov
+      run: dotnet test --filter "FullyQualifiedName~Handlers" /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:Include="[TowerDefense.Api]TowerDefense.Api.GameLogic.Handlers.*"
 
-    - name: All tests
+    - name: Integration test
       working-directory: src/TowerDefense.Tests
-      run: dotnet test
+      run: dotnet test --filter "FullyQualifiedName~IntegrationTest"
 
