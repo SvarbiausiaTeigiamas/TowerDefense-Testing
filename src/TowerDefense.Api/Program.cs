@@ -3,6 +3,19 @@ using TowerDefense.Api.Bootstrap.AutoMapper;
 using TowerDefense.Api.Constants;
 using TowerDefense.Api.Hubs;
 
+public class MyClass
+{
+    // This will trigger the analyzer
+    public void MySillyMethod() 
+    {
+    }
+
+    // This won't trigger the analyzer
+    public void MyNormalMethod() 
+    {
+    }
+}
+
 public partial class Program
 {
     public static void Main(string[] args)

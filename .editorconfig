@@ -1,0 +1,3 @@
+[*.{cs,vb}]
+# Custom rules
+dotnet_diagnostic.TD001.severity = warning

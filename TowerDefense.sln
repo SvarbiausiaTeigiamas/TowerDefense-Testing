@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6D3F0C11-45A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "src\TowerDefense.Tests\UnitTests.csproj", "{69B52EBC-DC36-4FD0-BE1B-B648591A2EC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerDefence.Analyzers", "src\TowerDefence.Analyzers\TowerDefence.Analyzers.csproj", "{B68AC663-CB9A-497E-894F-690AE98D9051}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{69B52EBC-DC36-4FD0-BE1B-B648591A2EC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69B52EBC-DC36-4FD0-BE1B-B648591A2EC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69B52EBC-DC36-4FD0-BE1B-B648591A2EC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B68AC663-CB9A-497E-894F-690AE98D9051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B68AC663-CB9A-497E-894F-690AE98D9051}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B68AC663-CB9A-497E-894F-690AE98D9051}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B68AC663-CB9A-497E-894F-690AE98D9051}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +36,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{906FFA8B-31DB-4A6C-B24D-44247496C54C} = {6D3F0C11-45AD-4185-965A-8E5118898543}
 		{69B52EBC-DC36-4FD0-BE1B-B648591A2EC4} = {6D3F0C11-45AD-4185-965A-8E5118898543}
+		{B68AC663-CB9A-497E-894F-690AE98D9051} = {6D3F0C11-45AD-4185-965A-8E5118898543}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {72767D52-8A85-4E0A-9B04-1DDF7963353C}

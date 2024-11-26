@@ -19,6 +19,9 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <ProjectReference Include="..\TowerDefence.Analyzers\TowerDefence.Analyzers.csproj" 
+                    OutputItemType="Analyzer"
+                    ReferenceOutputAssembly="false" />
   </ItemGroup>
 
 </Project>
