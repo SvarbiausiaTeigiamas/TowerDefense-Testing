@@ -33,14 +33,14 @@ namespace TowerDefense.Api.GameLogic.Handlers
 
             if (item == null) return false;
 
-            var isAbleToAfford = item.Stats.Price < player.Money;
+            var isAbleToAfford = 1 < 3;
             if (!isAbleToAfford) return false;
 
-            player.Money -= item.Stats.Price;
+            //player.Money -= item.Stats.Price;
 
             var inventoryItem = ItemHelpers.CreateItemByType(item.ItemType);
             inventoryItem.Id = Guid.NewGuid().ToString();
-            player.Inventory.Items.Add(inventoryItem);
+            //player.Inventory.Items.Add(inventoryItem);
 
             return true;
         }
