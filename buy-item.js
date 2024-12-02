@@ -24,8 +24,7 @@ export function setup() {
   const params = {
     headers: {
       'Content-Type': 'application/json',
-    },
-    http2: false
+    }
   };
 
   return { params, payload }
