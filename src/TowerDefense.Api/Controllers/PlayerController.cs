@@ -56,6 +56,14 @@ namespace TowerDefense.Api.Controllers
             return Ok();
         }
 
+        [HttpPost("endturnall")]
+        public ActionResult EndTurn()
+        {
+            _turnHandler.TryEndTurn("playerone");
+            _turnHandler.TryEndTurn("playertwo");
+            return Ok();
+        }
+
         /// <summary>
         /// Clears game state and restarts game
         /// </summary>

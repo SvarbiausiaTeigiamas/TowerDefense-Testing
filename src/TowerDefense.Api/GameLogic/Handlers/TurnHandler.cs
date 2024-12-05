@@ -11,6 +11,7 @@ namespace TowerDefense.Api.GameLogic.Handlers
     {
         private readonly State _gameState;
         private readonly IBattleHandler _battleHandler;
+        private readonly object _lock = new object();
 
         public TurnHandler(IBattleHandler battleHandler)
         {
@@ -20,14 +21,16 @@ namespace TowerDefense.Api.GameLogic.Handlers
 
         public async Task TryEndTurn(string playerName)
         {
-            if (_gameState.PlayersFinishedTurn.ContainsKey(playerName)) return;
-            _gameState.PlayersFinishedTurn.Add(playerName, true);
+            lock (_lock)
+            {
+                if (_gameState.PlayersFinishedTurn.ContainsKey(playerName)) return;
+                _gameState.PlayersFinishedTurn.Add(playerName, true);
+                if (_gameState.PlayersFinishedTurn.Count != Constants.TowerDefense.MaxNumberOfPlayers) return;
 
-            if (_gameState.PlayersFinishedTurn.Count != Constants.TowerDefense.MaxNumberOfPlayers) return;
+                _battleHandler.HandleEndTurn();
 
-            await _battleHandler.HandleEndTurn();
-
-            _gameState.PlayersFinishedTurn.Clear();
+                _gameState.PlayersFinishedTurn.Clear();
+            }
         }
     }
 }

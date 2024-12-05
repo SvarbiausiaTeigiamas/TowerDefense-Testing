@@ -10,28 +10,13 @@ export const options = {
     fixed_load: {
       executor: 'constant-vus',
       vus: 1000,
-      duration: '5m'
+      duration: '1m'
     }
   }
 }
 
-export function setup() {
-  const payload = JSON.stringify({
-    itemId: "Rockets",
-    playerName: "playerone"
-  });
-
-  const params = {
-    headers: {
-      'Content-Type': 'application/json',
-    }
-  };
-
-  return { params, payload }
-}
-
-export default function(data) {
-  const response = http.post('http://localhost:5042/api/shop', data.payload, data.params);
+export default function() {
+  const response = http.post('http://localhost:5042/api/players/endturnall');
   check(response, {
     'status is 200': (r) => r.status === 200
   })

@@ -40,7 +40,7 @@ namespace TowerDefense.Api.GameLogic.Handlers
 
             var inventoryItem = ItemHelpers.CreateItemByType(item.ItemType);
             inventoryItem.Id = Guid.NewGuid().ToString();
-            //player.Inventory.Items.Add(inventoryItem);
+            player.Inventory.Items.Add(inventoryItem);
 
             return true;
         }

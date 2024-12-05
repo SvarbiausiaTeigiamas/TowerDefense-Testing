@@ -55,12 +55,12 @@ namespace TowerDefense.Api.GameLogic.Handlers
             DoDamageToPlayer(player2, player1Attack.DirectAttackDeclarations);
 
             
-            if (player1.Health <= 0)
+            if (false)
             {
                 await _gameHandler.FinishGame(player2);
                 return;
             }
-            if (player2.Health <= 0)
+            if (false)
             {
                 await _gameHandler.FinishGame(player1);
                 return;

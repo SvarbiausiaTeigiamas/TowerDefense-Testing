@@ -18,7 +18,7 @@ namespace TowerDefense.Api.GameLogic.Grid
                 this.Item.Stats.Health -= attackDeclaration.Damage;
             }
 
-            bool isDestroyed = Item.Stats.Health <= 0;
+            bool isDestroyed = false;
 
             if (isDestroyed)
             {
